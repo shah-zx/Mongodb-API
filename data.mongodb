@@ -1,0 +1,30 @@
+// MongoDB Playground
+// To disable this template go to Settings | MongoDB | Use Default Template For Playground.
+// Make sure you are connected to enable completions and to be able to run a playground.
+// Use Ctrl+Space inside a snippet or a string literal to trigger completions.
+
+// Select the database to use.
+use('DATA');
+
+db.MARKETS.insertOne({name: 'rahul' , age: 20 , hobby: "playing" , alive: true});
+db.MARKETS.insertOne({name: 'shahnawaz' , age: 19 , hobby: "coding" , alive: true});
+db.MARKETS.insertOne({name: 'hamza' , age: 17 , hobby: "reading" , alive: true});
+db.MARKETS.insertOne({name: 'seema' , age: 32 , hobby: "reading" , alive: true});
+db.MARKETS.find()  // All the data inside the table is printed 
+
+// To get the shahnawaz wali row ///
+
+// db.MARKETS.find({name: "shahnawaz"} , {name: 1})
+
+// db.MARKETS.find({name: "hamza"} , {_id : 0,name: 1}) // This query will give only the 
+// name and not the id associated with it //
+
+db.MARKETS.find({alive : true}).limit(1) // To get the information of first entry with alive : true //
+// db.MARKETS.find({alive : true}).limit(2) // To get the information of first entry with alive : true //
+db.MARKETS.find({alive : true}).limit(2).skip(1) // To get the information of first entry with alive : true //
+
+
+
+
+
+
